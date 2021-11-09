@@ -9,9 +9,15 @@ class LoginPage extends StatelessWidget {
       color: Colors.white,
       child: Column(
         children: [
+          const SizedBox(
+            height: 40.0,
+          ),
           Image.asset(
             "assets/images/login.png",
             fit: BoxFit.cover,
+          ),
+          const SizedBox(
+            height: 20.0,
           ),
           const Text(
             "Welcome",
@@ -20,6 +26,35 @@ class LoginPage extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+          const SizedBox(
+            height: 20.0,
+          ),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+            child: Column(
+              children: [
+                TextFormField(
+                  decoration: const InputDecoration(
+                      hintText: "Enter The Name", labelText: "User Name"),
+                ),
+                TextFormField(
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                      hintText: "Enter The Password", labelText: "Password"),
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      print("done its work");
+                    },
+                    child: const Text("Login"),
+                    style: TextButton.styleFrom())
+              ],
+            ),
+          )
         ],
       ),
     );

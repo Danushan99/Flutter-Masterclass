@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:new_app/utils/routes.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  String name = "";
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -22,9 +28,9 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 20.0,
             ),
-            const Text(
-              "Welcome",
-              style: TextStyle(
+            Text(
+              "Welcome $name",
+              style: const TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
               ),
@@ -40,6 +46,11 @@ class LoginPage extends StatelessWidget {
                   TextFormField(
                     decoration: const InputDecoration(
                         hintText: "Enter The Name", labelText: "User Name"),
+                    onChanged: (value) {
+                      name = value;
+                      build(context);
+                      setState(() {});
+                    },
                   ),
                   TextFormField(
                     obscureText: true,

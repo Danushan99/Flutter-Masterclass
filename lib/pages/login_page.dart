@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:new_app/utils/routes.dart';
 
 class LoginPage extends StatefulWidget {
@@ -60,8 +61,21 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(
                     height: 20.0,
                   ),
-
-                  
+                  Container(
+                    width: 140.0,
+                    height: 45,
+                    alignment: Alignment.center,
+                    child: const Text(
+                      "Login",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18),
+                    ),
+                    decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(8)),
+                  )
                   // ElevatedButton(
                   //   onPressed: () {
                   //     //for testing button works

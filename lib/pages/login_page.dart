@@ -11,6 +11,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String name = "";
+  bool _changeBtn = false;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -62,24 +63,32 @@ class _LoginPageState extends State<LoginPage> {
                     height: 20.0,
                   ),
                   InkWell(
-                    onTap: () {
+                    onTap: () async {
+                      setState(() {
+                        _changeBtn = true;
+                      });
+                      await Future.delayed(const Duration(seconds: 1));
                       Navigator.pushNamed(context, MyRoutes.homeRoute);
                       print("done its work");
                     },
-                    child: Container(
-                      width: 140.0,
-                      height: 45,
+                    child: AnimatedContainer(
+                      duration: const Duration(seconds: 1),
+                      width: _changeBtn ? 50 : 140.0,
+                      height: 50,
                       alignment: Alignment.center,
-                      child: const Text(
-                        "Login",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18),
-                      ),
+                      child: _changeBtn
+                          ? const Icon(Icons.done, color: Colors.white)
+                          : const Text(
+                              "Login",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18),
+                            ),
                       decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(8)),
+                          color: Colors.teal,
+                          borderRadius:
+                              BorderRadius.circular(_changeBtn ? 50 : 8)),
                     ),
                   )
                   // ElevatedButton(

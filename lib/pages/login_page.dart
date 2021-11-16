@@ -68,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                         _changeBtn = true;
                       });
                       await Future.delayed(const Duration(seconds: 1));
-                      Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      Navigator.pushNamed(context, MyRoutes.newRoute);
                       print("done its work");
                     },
                     child: AnimatedContainer(

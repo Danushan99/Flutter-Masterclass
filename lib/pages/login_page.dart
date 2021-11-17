@@ -14,12 +14,22 @@ class _LoginPageState extends State<LoginPage> {
   bool _changeBtn = false;
   final _formKey = GlobalKey<FormState>();
 
+  moveToHone(BuildContext context) async {
+    setState(() {
+      _changeBtn = true;
+    });
+    await Future.delayed(const Duration(seconds: 1));
+    await Navigator.pushNamed(context, MyRoutes.homeRoute);
+    print("done its work");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.white,
       child: SingleChildScrollView(
         child: Form(
+          key: _formKey,
           child: Column(
             children: [
               const SizedBox(
@@ -67,14 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 20.0,
                     ),
                     InkWell(
-                      onTap: () async {
-                        setState(() {
-                          _changeBtn = true;
-                        });
-                        await Future.delayed(const Duration(seconds: 1));
-                        Navigator.pushNamed(context, MyRoutes.homeRoute);
-                        print("done its work");
-                      },
+                      onTap: () => moveToHone(context),
                       child: AnimatedContainer(
                         duration: const Duration(seconds: 1),
                         width: _changeBtn ? 50 : 140.0,

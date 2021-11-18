@@ -6,16 +6,18 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const imageUrl = "https://avatars.githubusercontent.com/u/67334286?v=4";
     return Drawer(
       child: ListView(
-        children: const [
+        children: [
           DrawerHeader(
               padding: EdgeInsets.zero,
               //margin: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                accountName: Text('Dhanu THazan'),
-                accountEmail: Text('dhanuthasan08@gmail.com'),
+                accountName: const Text('Dhanu Thazan'),
+                accountEmail: const Text('dhanuthasan08@gmail.com'),
+                currentAccountPicture: Image.network(imageUrl),
               )),
         ],
       ),

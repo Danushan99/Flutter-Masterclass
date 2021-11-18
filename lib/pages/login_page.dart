@@ -8,7 +8,6 @@ class LoginPage extends StatefulWidget {
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
-
 class _LoginPageState extends State<LoginPage> {
   String name = "";
   bool _changeBtn = false;
@@ -21,8 +20,6 @@ class _LoginPageState extends State<LoginPage> {
       });
       await Future.delayed(const Duration(seconds: 1));
       await Navigator.pushNamed(context, MyRoutes.homeRoute);
-
-      print("done its work");
     }
   }
 

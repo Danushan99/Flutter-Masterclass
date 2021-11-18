@@ -15,12 +15,13 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
 
   moveToHone(BuildContext context) async {
-    setState(() {
-      _changeBtn = true;
-    });
-    await Future.delayed(const Duration(seconds: 1));
-    await Navigator.pushNamed(context, MyRoutes.homeRoute);
-    print("done its work");
+    if (_formKey.currentState!.validate()) {
+      setState(() {
+        _changeBtn = true;
+      });
+      await Future.delayed(const Duration(seconds: 1));
+      await Navigator.pushNamed(context, MyRoutes.homeRoute);
+    }
   }
 
   @override
@@ -61,6 +62,12 @@ class _LoginPageState extends State<LoginPage> {
                     TextFormField(
                       decoration: const InputDecoration(
                           hintText: "Enter The Name", labelText: "User Name"),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Enter The User Name";
+                        }
+                        return null;
+                      },
                       onChanged: (value) {
                         name = value;
                         build(context);
@@ -72,6 +79,14 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: const InputDecoration(
                           hintText: "Enter The Password",
                           labelText: "Password"),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Enter The Password";
+                        } else if (value.length < 6) {
+                          return "Password Should Be 6 Digits";
+                        }
+                        return null;
+                      },
                     ),
                     const SizedBox(
                       height: 20.0,
@@ -86,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: _changeBtn
                             ? const Icon(Icons.done, color: Colors.white)
                             : const Text(
-                                "Login",
+                                "LOGIN",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
@@ -97,22 +112,10 @@ class _LoginPageState extends State<LoginPage> {
                             borderRadius:
                                 BorderRadius.circular(_changeBtn ? 50 : 8)),
                       ),
-                    )
-                    // ElevatedButton(
-                    //   onPressed: () {
-                    //     //for testing button works
-                    //     // ignore: avoid_print
-                    //     print("done its work");
-                    //     Navigator.pushNamed(context, MyRoutes.homeRoute);
-                    //   },
-                    //   child: const Text("Login"),
-                    //   style: TextButton.styleFrom(
-                    //     minimumSize: const Size(150, 40),
-                    //   ),
-                    // ),
+                    ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

@@ -8,6 +8,7 @@ class LoginPage extends StatefulWidget {
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
+
 class _LoginPageState extends State<LoginPage> {
   String name = "";
   bool _changeBtn = false;
@@ -80,9 +81,9 @@ class _LoginPageState extends State<LoginPage> {
                           labelText: "Password"),
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return "Enter The Password ";
+                          return "Enter The Password";
                         } else if (value.length < 6) {
-                          return "password should be 6 digits";
+                          return "Password Should Be 6 Digits";
                         }
                         return null;
                       },
@@ -111,10 +112,10 @@ class _LoginPageState extends State<LoginPage> {
                             borderRadius:
                                 BorderRadius.circular(_changeBtn ? 50 : 8)),
                       ),
-                    )
+                    ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

@@ -12,14 +12,17 @@ class MyDrawer extends StatelessWidget {
         // ignore: prefer_const_literals_to_create_immutables
         children: [
           const DrawerHeader(
-              padding: EdgeInsets.zero,
-              //margin: EdgeInsets.zero,
-              child: UserAccountsDrawerHeader(
-                  margin: EdgeInsets.zero,
-                  accountName: Text('Dhanu Thazan'),
-                  accountEmail: Text('dhanuthasan08@gmail.com'),
-                  currentAccountPicture:
-                      CircleAvatar(backgroundImage: NetworkImage(imageUrl)))),
+            padding: EdgeInsets.zero,
+            //margin: EdgeInsets.zero,
+            child: UserAccountsDrawerHeader(
+              margin: EdgeInsets.zero,
+              accountName: Text('Dhanu Thazan'),
+              accountEmail: Text('dhanuthasan08@gmail.com'),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(imageUrl),
+              ),
+            ),
+          ),
         ],
       ),
     );

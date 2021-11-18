@@ -115,18 +115,6 @@ class _LoginPageState extends State<LoginPage> {
                                 BorderRadius.circular(_changeBtn ? 50 : 8)),
                       ),
                     )
-                    // ElevatedButton(
-                    //   onPressed: () {
-                    //     //for testing button works
-                    //     // ignore: avoid_print
-                    //     print("done its work");
-                    //     Navigator.pushNamed(context, MyRoutes.homeRoute);
-                    //   },
-                    //   child: const Text("Login"),
-                    //   style: TextButton.styleFrom(
-                    //     minimumSize: const Size(150, 40),
-                    //   ),
-                    // ),
                   ],
                 ),
               )

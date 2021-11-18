@@ -101,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: _changeBtn
                             ? const Icon(Icons.done, color: Colors.white)
                             : const Text(
-                                "Login",
+                                "LOGIN",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,

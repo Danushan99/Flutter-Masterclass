@@ -8,23 +8,30 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     const imageUrl = "https://avatars.githubusercontent.com/u/67334286?v=4";
     return Drawer(
-      child: ListView(
-        // ignore: prefer_const_literals_to_create_immutables
-        children: [
-          const DrawerHeader(
-            padding: EdgeInsets.zero,
-            //margin: EdgeInsets.zero,
-            child: UserAccountsDrawerHeader(
-              margin: EdgeInsets.zero,
-              accountName: Text('Dhanu Thazan'),
-              accountEmail: Text('dhanuthasan08@gmail.com'),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: NetworkImage(imageUrl),
-                
+      child: Container(
+        color: Colors.teal,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: const [
+            DrawerHeader(
+              padding: EdgeInsets.zero,
+
+              //margin: EdgeInsets.zero,
+              child: UserAccountsDrawerHeader(
+                margin: EdgeInsets.zero,
+                accountName: Text(
+                  'Dhanu Thazan',
+                  style: TextStyle(fontSize: 18),
+                ),
+                accountEmail: Text('dhanuthasan08@gmail.com',
+                    style: TextStyle(fontSize: 14)),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: NetworkImage(imageUrl),
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

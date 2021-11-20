@@ -13,12 +13,17 @@ class HomePage extends StatelessWidget {
         elevation: 0.0,
         iconTheme: const IconThemeData(color: Colors.black),
       ),
-      body: Container(
-        height: 100,
-        width: 100,
-        color: Colors.red,
-      ),
       drawer: const MyDrawer(),
+      body: Container(
+        height: 400,
+        width: 400,
+        color: Colors.green,
+        child: Container(
+          height: 100,
+          width: 100,
+          color: Colors.red,
+        ),
+      ),
     );
   }
 }

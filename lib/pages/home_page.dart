@@ -13,13 +13,10 @@ class HomePage extends StatelessWidget {
         elevation: 0.0,
         iconTheme: const IconThemeData(color: Colors.black),
       ),
-      body: const Material(
-        child: Center(
-          child: Text(
-            "Welcome To Application",
-            style: TextStyle(color: Colors.black),
-          ),
-        ),
+      body: Container(
+        height: 100,
+        width: 100,
+        color: Colors.red,
       ),
       drawer: const MyDrawer(),
     );

@@ -1,5 +1,5 @@
 class ProductsModel {
-  final products = [
+  static final items = [
     Item(
         id: "prd01",
         name: "iphone 13",

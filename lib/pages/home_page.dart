@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:new_app/models/products.dart';
 import 'package:new_app/widget/drawer.dart';
+import 'package:new_app/widget/product_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,19 +16,11 @@ class HomePage extends StatelessWidget {
         iconTheme: const IconThemeData(color: Colors.black),
       ),
       drawer: const MyDrawer(),
-      body: Container(
-        constraints: const BoxConstraints(
-          maxHeight: 200,
-          minHeight: 70,
-          minWidth: 70,
-          maxWidth: 200,
-        ),
-        color: Colors.green,
-        child: Container(
-          height: 10,
-          width: 10,
-          color: Colors.red,
-        ),
+      body: ListView.builder(
+        itemCount: ProductsModel.items.length,
+        itemBuilder: (context, index) {
+          return ProductWidget(item: ProductsModel.items[index]);
+        },
       ),
     );
   }

@@ -15,12 +15,16 @@ class HomePage extends StatelessWidget {
       ),
       drawer: const MyDrawer(),
       body: Container(
-        height: 400,
-        width: 400,
+        constraints: const BoxConstraints(
+          maxHeight: 200,
+          minHeight: 70,
+          minWidth: 70,
+          maxWidth: 200,
+        ),
         color: Colors.green,
         child: Container(
-          height: 100,
-          width: 100,
+          height: 10,
+          width: 10,
           color: Colors.red,
         ),
       ),

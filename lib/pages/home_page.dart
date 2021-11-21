@@ -16,11 +16,14 @@ class HomePage extends StatelessWidget {
         iconTheme: const IconThemeData(color: Colors.black),
       ),
       drawer: const MyDrawer(),
-      body: ListView.builder(
-        itemCount: ProductsModel.items.length,
-        itemBuilder: (context, index) {
-          return ProductWidget(item: ProductsModel.items[index]);
-        },
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: ProductsModel.items.length,
+          itemBuilder: (context, index) {
+            return ProductWidget(item: ProductsModel.items[index]);
+          },
+        ),
       ),
     );
   }

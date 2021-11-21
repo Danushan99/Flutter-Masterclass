@@ -1,3 +1,17 @@
+class ProductsModel {
+  static final items = [
+    Item(
+        id: "prd01",
+        name: "IPhone 13 pro",
+        des: "Apple iPhone 12th generation",
+        price: 99,
+        color: "#33505a",
+        image:
+            "https://cdn11.bigcommerce.com/s-akig30/images/stencil/original/products/597/3518/WEB-14_13Pro_PIPT-71-front_clr__43790.1635208751.jpg?c=2")
+  ];
+  
+}
+
 class Item {
   final String id;
   final String name;
@@ -14,13 +28,3 @@ class Item {
       required this.color,
       required this.image});
 }
-
-final products = [
-  Item(
-      id: "prd01",
-      name: "iphone 13",
-      des: "an iphone",
-      price: 99,
-      color: "#33505a",
-      image: "url")
-];

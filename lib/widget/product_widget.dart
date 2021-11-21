@@ -8,6 +8,8 @@ class ProductWidget extends StatelessWidget {
   // : assert(item != null),
   @override
   Widget build(BuildContext context) {
-    return ListTile();
+    return ListTile(
+      leading: Image.network(item.image), 
+    );
   }
 }

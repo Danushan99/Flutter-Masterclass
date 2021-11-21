@@ -6,7 +6,8 @@ class ProductsModel {
         des: "an iphone",
         price: 99,
         color: "#33505a",
-        image: "url")
+        image:
+            "https://cdn11.bigcommerce.com/s-akig30/images/stencil/original/products/597/3518/WEB-14_13Pro_PIPT-71-front_clr__43790.1635208751.jpg?c=2")
   ];
 }
 

@@ -16,8 +16,6 @@ class MyDrawer extends StatelessWidget {
           children: const [
             DrawerHeader(
               padding: EdgeInsets.zero,
-
-              //margin: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
                 accountName: Text(

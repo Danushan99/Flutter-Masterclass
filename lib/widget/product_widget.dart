@@ -11,6 +11,7 @@ class ProductWidget extends StatelessWidget {
       elevation: 1.0,
       child: ListTile(
         onTap: () {
+          // ignore: avoid_print
           print("${item.name} pressed");
         },
         leading: Image.network(item.image),

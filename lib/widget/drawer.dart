@@ -23,7 +23,7 @@ class MyDrawer extends StatelessWidget {
                   style: TextStyle(fontSize: 18),
                 ),
                 accountEmail: Text('dhanuthasan08@gmail.com',
-                    style: TextStyle(fontSize: 14)),
+                    style: TextStyle(fontSize: 15)),
                 currentAccountPicture: CircleAvatar(
                   backgroundImage: NetworkImage(imageUrl),
                 ),

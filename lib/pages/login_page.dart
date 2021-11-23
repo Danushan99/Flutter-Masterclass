@@ -108,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                                     fontSize: 18),
                               ),
                         decoration: BoxDecoration(
-                            color: Colors.teal,
+                            color: Colors.deepPurple,
                             borderRadius:
                                 BorderRadius.circular(_changeBtn ? 50 : 8)),
                       ),
